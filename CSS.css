@@ -1,0 +1,380 @@
+/* Основные стили для сайта M1kunya с эффектом liquid glass */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --accent-color: #9b59b6;
+    --secondary-color: #8e44ad;
+}
+
+/* Декоративные элементы - анимация частиц */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23667eea" opacity="0.1"/><circle cx="20" cy="30" r="0.8" fill="%23764ba2" opacity="0.1"/><circle cx="80" cy="70" r="1.2" fill="%23667eea" opacity="0.1"/></svg>');
+    pointer-events: none;
+    z-index: -1;
+}
+
+body {
+    font-family: 'Montserrat', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color), var(--accent-color));
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+}
+
+section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+}
+
+h2 {
+    color: #9b59b6;
+    border-bottom: 2px solid #9b59b6;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    text-shadow: 1px 1px 3px rgba(155, 89, 182, 0.4);
+    font-weight: 600;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.project {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #9b59b6;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(155, 89, 182, 0.3);
+    border-left: 4px solid #8e44ad;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.project h3 {
+    color: #8e44ad;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px rgba(142, 68, 173, 0.5);
+    font-weight: 500;
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid #9b59b6;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+footer {
+    background: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid var(--glass-border);
+}
+
+footer a {
+    color: #9b59b6;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: rgba(155, 89, 182, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    transition: all 0.3s ease;
+    margin: 0 0.3rem;
+}
+
+footer a:hover {
+    text-decoration: none;
+    background: rgba(155, 89, 182, 0.3);
+    border-color: rgba(155, 89, 182, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(155, 89, 182, 0.2);
+}
+
+.footer-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    max-width: 800px;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.footer-pill:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-pill span {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+
+.footer-pill a {
+    color: #9b59b6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.footer-pill a:hover {
+    color: #8e44ad;
+    text-decoration: underline;
+}
+
+
+/* Дополнительные декоративные элементы */
+blockquote::before {
+    content: "“";
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    top: -0.5rem;
+}
+
+blockquote::after {
+    content: "”";
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+    position: absolute;
+    right: -0.5rem;
+    bottom: -0.5rem;
+}
+
+blockquote {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section, .project {
+    animation: fadeIn 0.6s ease-out;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+
+/* Навигация по проектам */
+.project-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.nav-pill {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: rgba(155, 89, 182, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(155, 89, 182, 0.3);
+}
+
+.nav-pill:hover {
+    background: rgba(155, 89, 182, 0.3);
+    border-color: rgba(155, 89, 182, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(155, 89, 182, 0.2);
+}
+
+.nav-pill.active {
+    background: rgba(155, 89, 182, 0.4);
+    border-color: rgba(155, 89, 182, 0.6);
+    font-weight: 600;
+}
+
+/* Стили для страниц проектов */
+.project-detail {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+}
+
+.feature-highlight {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    border-left: 3px solid var(--accent-color);
+}
+
+.status-badge {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff6b6b;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+
+.screenshots {
+    text-align: center;
+}
+
+.screenshot-placeholder {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.use-cases {
+    display: grid;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.use-case {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.system-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.system-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
