@@ -495,8 +495,9 @@ section:nth-child(4) { animation-delay: 0.4s; }
 /* Навигация по проектам */
 .project-nav {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.2rem;
     flex-wrap: wrap;
+<<<<<<< HEAD
     margin: 1rem auto;
     max-width: 1000px;
     padding: 0.8rem;
@@ -515,24 +516,37 @@ section:nth-child(4) { animation-delay: 0.4s; }
     border-color: rgba(155, 89, 182, 0.4);
     box-shadow: var(--glass-shadow-glow);
     transform: translateY(-2px);
+=======
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+>>>>>>> 0057b469af2f8645e2ee1175918fe90481856c88
 }
 
 .nav-pill {
     display: inline-block;
-    padding: 0.3rem 0.8rem;
+    padding: 0.2rem 0.5rem;
     background: rgba(155, 89, 182, 0.25);
     color: white;
     text-decoration: none;
-    border-radius: 18px;
-    border: 2px solid rgba(155, 89, 182, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(155, 89, 182, 0.5);
     transition: all 0.3s ease;
     font-weight: 500;
     text-shadow: 1px 1px 2px rgba(155, 89, 182, 0.3);
-    font-size: 0.75rem;
+    font-size: 0.65rem;
 }
 
 .nav-pill {
     display: inline-block;
+<<<<<<< HEAD
     padding: 0.6rem 1.5rem;
     background: rgba(155, 89, 182, 0.15);
     color: white;
@@ -573,6 +587,18 @@ section:nth-child(4) { animation-delay: 0.4s; }
     50% {
         transform: translate(2%, 2%) rotate(0.5deg);
     }
+=======
+    padding: 0.2rem 0.5rem;
+    background: rgba(155, 89, 182, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(155, 89, 182, 0.3);
+    font-size: 0.65rem;
+>>>>>>> 0057b469af2f8645e2ee1175918fe90481856c88
 }
 
 .nav-pill:hover {
@@ -749,6 +775,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+<<<<<<< HEAD
 
 /* Команда */
 .team-hero {
@@ -885,3 +912,5 @@ section,
 footer .footer-pill {
     box-shadow: var(--glass-shadow-glow);
 }
+=======
+>>>>>>> 0057b469af2f8645e2ee1175918fe90481856c88
