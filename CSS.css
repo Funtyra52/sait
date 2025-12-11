@@ -500,11 +500,11 @@ section:nth-child(4) { animation-delay: 0.4s; }
     margin: 1rem auto;
     max-width: 1000px;
     padding: 0.8rem;
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(155, 89, 182, 0.12));
     border-radius: 30px;
     backdrop-filter: blur(8px);
-    border: 2px solid var(--glass-border-glow);
-    box-shadow: var(--glass-shadow);
+    border: 2px solid rgba(155, 89, 182, 0.35);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
     transition: all 0.4s ease;
     justify-content: center;
 }
@@ -519,18 +519,22 @@ section:nth-child(4) { animation-delay: 0.4s; }
 
 .nav-pill {
     display: inline-block;
-    padding: 0.2rem 0.5rem;
-    background: rgba(155, 89, 182, 0.25);
+    padding: 0.4rem 0.9rem;
+    background: linear-gradient(145deg, rgba(155, 89, 182, 0.5), rgba(85, 37, 122, 0.38));
     color: white;
     text-decoration: none;
-    border-radius: 12px;
-    border: 1px solid rgba(155, 89, 182, 0.5);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    border: 1px solid rgba(155, 89, 182, 0.9);
+    transition: all 0.24s ease;
     font-weight: 500;
-    text-shadow: 1px 1px 2px rgba(155, 89, 182, 0.3);
-    font-size: 0.65rem;
+    text-shadow: 1px 1px 3px rgba(155, 89, 182, 0.4);
+    font-size: 0.8rem;
     position: relative;
     overflow: hidden;
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.02em;
 }
 
 .nav-pill::before {
@@ -562,17 +566,21 @@ section:nth-child(4) { animation-delay: 0.4s; }
 }
 
 .nav-pill:hover {
-    background: rgba(155, 89, 182, 0.25);
-    border-color: rgba(155, 89, 182, 0.4);
-    transform: translateY(-3px);
-    box-shadow: var(--glass-shadow-glow);
+    background: linear-gradient(145deg, rgba(155, 89, 182, 0.58), rgba(85, 37, 122, 0.5));
+    border-color: rgba(155, 89, 182, 0.95);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow:
+        0 14px 30px rgba(155, 89, 182, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .nav-pill.active {
-    background: rgba(155, 89, 182, 0.35);
-    border-color: rgba(155, 89, 182, 0.5);
-    font-weight: 600;
-    box-shadow: var(--liquid-glow);
+    background: linear-gradient(145deg, rgba(155, 89, 182, 0.7), rgba(85, 37, 122, 0.56));
+    border-color: rgba(155, 89, 182, 1);
+    font-weight: 750;
+    box-shadow:
+        0 16px 32px rgba(155, 89, 182, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 /* Анимация активной кнопки */
