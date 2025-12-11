@@ -9,9 +9,9 @@
 </head>
 <body>
     <header>
+        <div class="header-glow"></div>
         <h1>M1kunya</h1>
-        <p>Роман Беляев</p>
-        <p>Начинающий разработчик и стример</p>
+        <p class="header-lead">Роман Беляев · начинающий разработчик и стример</p>
     </header>
 
     <nav class="project-nav">
@@ -24,45 +24,88 @@
     </nav>
 
     <main>
-        <section class="about">
-            <h2>Обо мне</h2>
-            <p>M1kunya - это начинающий программист с опытом в разработке программного обеспечения. Специализируется на создании высокопроизводительных веб сайтов и программ</p>
+        <section class="page-hero">
+            <div>
+                <h2>Обо мне</h2>
+                <p>M1kunya — начинающий разработчик с фокусом на практичные продукты и AI-подходы. Специализируется на создании лёгких, быстрых и понятных решений для Windows и веба.</p>
+            </div>
+            <div class="team-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">3</span>
+                    <span>активных проекта</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">AI</span>
+                    <span>используем для прототипов и документации</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">Windows</span>
+                    <span>главная платформа и эксперименты</span>
+                </div>
+            </div>
         </section>
 
         <section class="skills">
             <h2>Навыки и технологии</h2>
-            <ul>
-                <li>Языки программирования: JavaScript, Python, C++, С#</li>
-                <li>Веб-технологии: HTML, CSS</li>
-                <li>Базы данных: MySQL</li>
-                <li>Инструменты: Git, Linux</li>
-            </ul>
+            <div class="content-grid">
+                <div class="stat-card">
+                    <strong>Языки программирования</strong>
+                    <p>JavaScript, Python, C++, C#</p>
+                </div>
+                <div class="stat-card">
+                    <strong>Веб</strong>
+                    <p>HTML, CSS</p>
+                </div>
+                <div class="stat-card">
+                    <strong>Базы данных</strong>
+                    <p>MySQL</p>
+                </div>
+                <div class="stat-card">
+                    <strong>Инструменты</strong>
+                    <p>Git, Linux</p>
+                </div>
+            </div>
         </section>
 
         <section class="projects">
             <h2>Ключевые проекты</h2>
             <article class="project">
-                <h3>Программа для кастомизации и настройки Windows - M1kunTweaker</h3>
-                <p>M1kunTweaker - программа для кастомизации и настройки, ориентированная на улучшение производительности и визуального оформления Windows.</p>
-                <p style="color: red; font-weight: bold; margin: 0.5rem 0 0 0;">В РАЗРАБОТКЕ</p>
+                <h3>Программа для кастомизации и настройки Windows — M1kunTweaker</h3>
+                <p>M1kunTweaker — утилита для улучшения производительности и визуального оформления Windows.</p>
+                <div class="status-chip danger">В разработке</div>
+                <ul class="tag-list">
+                    <li>Windows</li>
+                    <li>Оптимизация</li>
+                    <li>Кастомизация UI</li>
+                </ul>
             </article>
 
             <article class="project">
-                <h3>Блокнот - M1kunNote</h3>
-                <p>Блокнот с расширенными возможностями, поддержку Markdown.</p>
-                <p style="color: red; font-weight: bold; margin: 0.5rem 0 0 0;">В РАЗРАБОТКЕ</p>
+                <h3>Блокнот — M1kunNote</h3>
+                <p>Блокнот с поддержкой Markdown</p>
+                <div class="status-chip danger">В разработке</div>
+                <ul class="tag-list">
+                    <li>Markdown</li>
+                    <li>Синхронизация</li>
+                    <li>Темы</li>
+                </ul>
             </article>
 
             <article class="project">
-                <h3>Программа для записи ISO - M1kunRead</h3>
-                <p>Программа для записи ISO файлов на флешку и последующей переустановке систем с неё</p>
-                <p style="color: red; font-weight: bold; margin: 0.5rem 0 0 0;">В РАЗРАБОТКЕ</p>
+                <h3>Программа для записи ISO — M1kunRead</h3>
+                <p>Запись ISO на флешку и создание загрузочных носителей с проверкой целостности.</p>
+                <div class="status-chip danger">В разработке</div>
+                <ul class="tag-list">
+                    <li>Bootable USB</li>
+                    <li>UEFI/Legacy</li>
+                    <li>Windows/Linux</li>
+                </ul>
             </article>
         </section>
 
         <section class="philosophy">
             <h2>Философия разработки</h2>
-            <p>M1kunya следует принципам чистого кода, модульной архитектуры и постоянного саморазвития. Верю, что лучший код - это тот, который легко читать, поддерживать и расширять.</p>
+            <p>M1kunya следует принципам чистого кода, модульной архитектуры и постоянного саморазвития. Лучший код — тот, что легко читать, поддерживать и расширять.</p>
             <blockquote>
                 "Хороший программист - это не тот, кто пишет сложный код, а тот, кто решает сложные задачи простым кодом."
             </blockquote>

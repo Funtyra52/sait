@@ -72,7 +72,7 @@ header {
     background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
     color: white;
     text-align: center;
-    padding: 2rem 1rem 3rem;
+    padding: 2.5rem 1rem 3.25rem;
     margin-bottom: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(12px);
@@ -82,6 +82,85 @@ header {
     overflow: hidden;
     border-radius: 12px;
     margin: 1rem;
+}
+
+.header-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 35%),
+                radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.2), transparent 40%),
+                radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.15), transparent 40%);
+    filter: blur(40px);
+    opacity: 0.45;
+    z-index: 0;
+}
+
+.header-lead {
+    position: relative;
+    z-index: 1;
+}
+
+.header-badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0 0.6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.pill {
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.pill.success { background: rgba(98, 247, 168, 0.16); border-color: rgba(98, 247, 168, 0.45); }
+.pill.info { background: rgba(102, 187, 255, 0.16); border-color: rgba(102, 187, 255, 0.45); }
+.pill.soft { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.35); }
+
+.team-hero .pill {
+    color: #1e1433;
+    border-color: rgba(155, 89, 182, 0.35);
+    background: rgba(155, 89, 182, 0.12);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    letter-spacing: 0.01em;
+}
+
+.btn.primary { background: linear-gradient(135deg, #ffd166, #ff7b9c); }
+.btn.ghost { background: rgba(255, 255, 255, 0.12); }
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
 }
 
 /* Жидкий эффект для заголовка */
@@ -495,7 +574,7 @@ section:nth-child(4) { animation-delay: 0.4s; }
 /* Навигация по проектам */
 .project-nav {
     display: flex;
-    gap: 0.2rem;
+    gap: 0.45rem;
     flex-wrap: wrap;
     margin: 1rem auto;
     max-width: 1000px;
@@ -748,18 +827,58 @@ section:nth-child(4) { animation-delay: 0.4s; }
 .team-hero {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: var(--glass-shadow);
     border: 1px solid var(--glass-border);
     color: #000;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .team-hero p {
     margin-top: 0.5rem;
     color: #000;
     max-width: 720px;
+}
+
+.hero-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.9rem;
+}
+
+.hero-right .team-metrics {
+    margin-top: 0;
+}
+
+.page-hero {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    color: #000;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.page-hero h2 {
+    margin-top: 0;
+}
+
+.page-hero .pill {
+    color: #1e1433;
+    border-color: rgba(155, 89, 182, 0.35);
+    background: rgba(155, 89, 182, 0.12);
 }
 
 .team-metrics {
@@ -805,12 +924,27 @@ section:nth-child(4) { animation-delay: 0.4s; }
     box-shadow: var(--glass-shadow);
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     color: #000;
+    position: relative;
 }
 
 .team-card:hover {
     transform: translateY(-6px);
     border-color: rgba(155, 89, 182, 0.4);
     box-shadow: var(--glass-shadow-glow);
+}
+
+.card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(155, 89, 182, 0.12);
+    display: grid;
+    place-items: center;
+    font-size: 1.15rem;
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    border: 1px solid rgba(155, 89, 182, 0.25);
 }
 
 .team-role {
@@ -839,6 +973,82 @@ section:nth-child(4) { animation-delay: 0.4s; }
     border-radius: 999px;
     padding: 0.25rem 0.75rem;
     font-size: 0.85rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.1rem 1rem;
+    box-shadow: var(--glass-shadow);
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+}
+
+.status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-chip.danger { background: rgba(255, 82, 82, 0.15); border-color: rgba(255, 82, 82, 0.35); color: #9b1b1b; }
+.status-chip.info { background: rgba(102, 187, 255, 0.15); border-color: rgba(102, 187, 255, 0.35); color: #1c3b66; }
+.status-chip.success { background: rgba(98, 247, 168, 0.15); border-color: rgba(98, 247, 168, 0.35); color: #15523a; }
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    margin: 0.6rem 0 0;
+    list-style: none;
+}
+
+.tag-list li {
+    padding: 0.28rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid rgba(155, 89, 182, 0.28);
+    background: rgba(155, 89, 182, 0.08);
+    font-size: 0.86rem;
+}
+
+.muted {
+    color: #4b4b4b;
+}
+
+.check-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.check-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 .team-links {
