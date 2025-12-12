@@ -1089,3 +1089,212 @@ section,
 footer .footer-pill {
     box-shadow: var(--glass-shadow-glow);
 }
+
+/* ============================================
+   ПРАЗДНИЧНЫЕ СТИЛИ - ДЕНЬ РОЖДЕНИЯ (12 ДЕКАБРЯ)
+   ============================================ */
+
+body.birthday-mode {
+    background: linear-gradient(135deg, #ffe0f0 0%, #ffc0d9 25%, #ffd4e5 50%, #ffe8f0 75%, #fff0f5 100%);
+    background-size: 400% 400%;
+    animation: birthdayGradient 8s ease infinite;
+}
+
+@keyframes birthdayGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Праздничный баннер */
+.birthday-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #9b59b6 100%);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    z-index: 10000;
+    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.5);
+    animation: birthdayBounce 2s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes birthdayBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.birthday-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.birthday-emoji {
+    font-size: 1.8rem;
+    animation: birthdaySpin 2s linear infinite;
+}
+
+@keyframes birthdaySpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.birthday-text {
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: birthdayPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes birthdayPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+body.birthday-mode header {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c44569 50%, #9b59b6 100%);
+    box-shadow: 0 8px 32px rgba(255, 107, 157, 0.4), 
+                0 0 60px rgba(155, 89, 182, 0.3);
+    animation: birthdayHeaderGlow 3s ease-in-out infinite;
+}
+
+@keyframes birthdayHeaderGlow {
+    0%, 100% { 
+        box-shadow: 0 8px 32px rgba(255, 107, 157, 0.4), 
+                    0 0 60px rgba(155, 89, 182, 0.3);
+    }
+    50% { 
+        box-shadow: 0 8px 40px rgba(255, 107, 157, 0.6), 
+                    0 0 80px rgba(155, 89, 182, 0.5);
+    }
+}
+
+body.birthday-mode header h1 {
+    animation: birthdayTextShine 3s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                 0 0 40px rgba(255, 107, 157, 0.6),
+                 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes birthdayTextShine {
+    0%, 100% { 
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                     0 0 40px rgba(255, 107, 157, 0.6),
+                     3px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+    50% { 
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1),
+                     0 0 60px rgba(255, 107, 157, 0.8),
+                     3px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Конфетти */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6b9d;
+    position: absolute;
+    top: -10px;
+    border-radius: 50%;
+    animation: confettiFall linear forwards;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Воздушные шарики */
+.birthday-balloon {
+    position: fixed;
+    width: 40px;
+    height: 50px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    bottom: -60px;
+    z-index: 9998;
+    pointer-events: none;
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.1);
+    animation: balloonRise linear forwards;
+}
+
+.birthday-balloon::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+}
+
+@keyframes balloonRise {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(50px) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* Праздничные эффекты для навигации */
+body.birthday-mode .nav-pill {
+    animation: birthdayNavPulse 2s ease-in-out infinite;
+}
+
+@keyframes birthdayNavPulse {
+    0%, 100% { 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+    50% { 
+        box-shadow: 0 14px 30px rgba(255, 107, 157, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+                    0 0 20px rgba(255, 107, 157, 0.3);
+    }
+}
+
+body.birthday-mode .nav-pill.active {
+    background: linear-gradient(145deg, rgba(255, 107, 157, 0.8), rgba(155, 89, 182, 0.7));
+    box-shadow: 0 16px 32px rgba(255, 107, 157, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 30px rgba(255, 107, 157, 0.5);
+}
+
+/* Праздничные эффекты для секций */
+body.birthday-mode section {
+    border-color: rgba(255, 107, 157, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 107, 157, 0.2),
+                0 0 20px rgba(155, 89, 182, 0.15);
+}
+
+body.birthday-mode section:hover {
+    box-shadow: 0 12px 40px rgba(255, 107, 157, 0.3),
+                0 0 30px rgba(155, 89, 182, 0.25);
+    border-color: rgba(255, 107, 157, 0.6);
+}
+
+/* Корректировка отступа для body при наличии баннера */
+body.birthday-mode {
+    padding-top: 70px;
+}
